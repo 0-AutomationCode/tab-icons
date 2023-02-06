@@ -1,4 +1,19 @@
-const listOfIcons = ["automation.png", "tasks.png", "user.png"];
+const listOfIcons = [
+  "automation.png",
+  "checklist.png",
+  "task.png",
+  "tasks.png",
+  "tasks2.png",
+  "user.png",
+// ===================
+  "user.png",
+  "user.png",
+  "user.png",
+  "user.png",
+  "user.png",
+  "user.png",
+  "user.png",
+];
 
 const tabIcon = $("#tab-icon");
 const title = $("title");
@@ -7,6 +22,7 @@ const iconsDiv = $("#icons");
 
 iconsDiv.css({
   display: "flex",
+  "flex-wrap": "wrap",
 });
 
 listOfIcons.forEach((elem, i) => {

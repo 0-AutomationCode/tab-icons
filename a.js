@@ -1,25 +1,61 @@
-const listOfIcons = [
-  "automation.png",
-  "checklist.png",
-  "table.png",
-  "task.png",
-  "tasks.png",
-  "tasks2.png",
-  "user.png",
-
-  /*
-
-
-
-
-  ==========
-  */
-];
-
 const tabIcon = $("#tab-icon");
 const title = $("title");
 const body = $("#body");
 const iconsDiv = $("#icons");
+
+const listOfIcons = [
+  { fileName: "automation.png", url: "" },
+  { fileName: "checklist.png", url: "" },
+  { fileName: "task.png", url: "" },
+  { fileName: "user-green.png", url: "" },
+  // ====================
+  {
+    fileName: "table.png",
+    url: "https://www.flaticon.com/free-icon/table_5865052?term=data+table&page=1&position=61&origin=search&related_id=5865052",
+  },
+  {
+    fileName: "table-green.png",
+    url: "https://www.flaticon.com/free-icon/table_5865052?term=data+table&page=1&position=61&origin=search&related_id=5865052",
+  },
+
+  {
+    fileName: "tasks.png",
+    url: "https://www.flaticon.com/free-icon/tasks_906334?term=tasks&page=1&position=10&origin=search&related_id=906334",
+  },
+
+  {
+    fileName: "tasks2.png",
+    url: "https://www.flaticon.com/free-icon/tasks_906334?term=tasks&page=1&position=10&origin=search&related_id=906334",
+  },
+  {
+    fileName: "home-green.png",
+    url: "https://www.flaticon.com/free-icon/home_25694?term=home&page=1&position=1&origin=search&related_id=25694",
+  },
+
+  {
+    fileName: "telephone-call.png",
+    url: "https://www.flaticon.com/free-icon/telephone-call_3059606?term=calls&page=1&position=16&origin=search&related_id=3059606",
+  },
+
+  { fileName: "office-building.png", url: "https://www.flaticon.com/free-icon/office-building_3688596?term=companies&page=1&position=19&origin=search&related_id=3688596" },
+
+  { fileName: "manager.png", url: "https://www.flaticon.com/free-icon/man_2552801?term=manager&page=1&position=52&origin=search&related_id=2552801" },
+
+  { fileName: ".png", url: "" },
+
+  { fileName: ".png", url: "" },
+
+  { fileName: ".png", url: "" },
+
+  { fileName: ".png", url: "" },
+
+
+  { fileName: ".png", url: "" },
+  // =========================
+  /*
+  https://raw.githubusercontent.com/0-AutomationCode/tab-icons/main/.png
+  */
+];
 
 iconsDiv.css({
   display: "flex",
@@ -29,7 +65,9 @@ iconsDiv.css({
 listOfIcons.forEach((elem, i) => {
   const newIconDiv = $(`<button></button>`);
   const newIconImg = $(`<img/>`);
-  const newIconTitle = $(`<span>${elem.slice(0, elem.length - 4)}</span>`);
+  const newIconTitle = $(
+    `<span>${elem.fileName.slice(0, elem.fileName.length - 4)}</span>`
+  );
   newIconDiv.append(newIconImg);
   newIconDiv.append(newIconTitle);
 
@@ -48,11 +86,11 @@ listOfIcons.forEach((elem, i) => {
     "margin-right": "5px",
   });
 
-  newIconImg.attr("src", `./${elem}`);
+  newIconImg.attr("src", `./${elem.fileName}`);
 
   newIconDiv.on("click", function () {
-    title.text(elem.slice(0, elem.length - 4));
-    tabIcon.attr("href", `./${elem}`);
+    title.text(elem.fileName.slice(0, elem.length - 4));
+    tabIcon.attr("href", `./${elem.fileName}`);
   });
 
   iconsDiv.append(newIconDiv);

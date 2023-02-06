@@ -14,7 +14,7 @@ const listOfIcons = [
     url: "https://www.flaticon.com/free-icon/table_5865052?term=data+table&page=1&position=61&origin=search&related_id=5865052",
   },
   {
-    fileName: "table-green.png",
+    fileName: "table_green.png",
     url: "https://www.flaticon.com/free-icon/table_5865052?term=data+table&page=1&position=61&origin=search&related_id=5865052",
   },
 
@@ -28,29 +28,28 @@ const listOfIcons = [
     url: "https://www.flaticon.com/free-icon/tasks_906334?term=tasks&page=1&position=10&origin=search&related_id=906334",
   },
   {
-    fileName: "home-green.png",
+    fileName: "home_green.png",
     url: "https://www.flaticon.com/free-icon/home_25694?term=home&page=1&position=1&origin=search&related_id=25694",
   },
 
   {
-    fileName: "telephone-call.png",
+    fileName: "telephone_call.png",
     url: "https://www.flaticon.com/free-icon/telephone-call_3059606?term=calls&page=1&position=16&origin=search&related_id=3059606",
   },
 
-  { fileName: "office-building.png", url: "https://www.flaticon.com/free-icon/office-building_3688596?term=companies&page=1&position=19&origin=search&related_id=3688596" },
+  { fileName: "office_building.png", url: "https://www.flaticon.com/free-icon/office-building_3688596?term=companies&page=1&position=19&origin=search&related_id=3688596" },
 
   { fileName: "manager.png", url: "https://www.flaticon.com/free-icon/man_2552801?term=manager&page=1&position=52&origin=search&related_id=2552801" },
 
-  { fileName: ".png", url: "" },
+  { fileName: "money_bag.png", url: "https://www.flaticon.com/free-icon/money-bag_2474496?term=money&page=1&position=70&origin=search&related_id=2474496" },
 
-  { fileName: ".png", url: "" },
+  { fileName: "information_system.png", url: "https://www.flaticon.com/free-icon/information-system_9552527?term=procedure&page=1&position=8&origin=search&related_id=9552527" },
 
-  { fileName: ".png", url: "" },
+  { fileName: "multiple_users_silhouette_green.png", url: "https://www.flaticon.com/free-icon/multiple-users-silhouette_33308?term=staff&page=1&position=4&origin=search&related_id=33308" },
 
-  { fileName: ".png", url: "" },
+  { fileName: "number_1.png", url: "https://www.flaticon.com/free-icon/number-1_3097244" },
 
-
-  { fileName: ".png", url: "" },
+  { fileName: "number_2.png", url: "https://www.flaticon.com/free-icon/2_3601634?term=2&page=1&position=1&origin=search&related_id=3601634" },
   // =========================
   /*
   https://raw.githubusercontent.com/0-AutomationCode/tab-icons/main/.png

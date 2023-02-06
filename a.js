@@ -1,18 +1,19 @@
 const listOfIcons = [
   "automation.png",
   "checklist.png",
+  "table.png",
   "task.png",
   "tasks.png",
   "tasks2.png",
   "user.png",
-// ===================
-  "user.png",
-  "user.png",
-  "user.png",
-  "user.png",
-  "user.png",
-  "user.png",
-  "user.png",
+
+  /*
+
+
+
+
+  ==========
+  */
 ];
 
 const tabIcon = $("#tab-icon");

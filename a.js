@@ -50,7 +50,21 @@ const listOfIcons = [
   { fileName: "number_1.png", url: "https://www.flaticon.com/free-icon/number-1_3097244" },
 
   { fileName: "number_2.png", url: "https://www.flaticon.com/free-icon/2_3601634?term=2&page=1&position=1&origin=search&related_id=3601634" },
+
+
+  { fileName: "suitcase.png", url: "https://www.flaticon.com/free-icon/suitcase_3281289?term=job&page=1&position=10&origin=search&related_id=3281289" },
+
+  { fileName: "number_3.png", url: "" },
+  { fileName: "number_4.png", url: "" },
+  { fileName: "number_5.png", url: "https://www.flaticon.com/free-icon/number-5_3841730" },
+  { fileName: "number_6.png", url: "https://www.flaticon.com/free-icon/six_3841731" },
+  { fileName: "number_7.png", url: "https://www.flaticon.com/free-icon/seven_3841747" },
+  { fileName: "number_8.png", url: "https://www.flaticon.com/free-icon/number-8_3841748" },
+  { fileName: "number_9.png", url: "https://www.flaticon.com/free-icon/number-9_3841749" },
+  { fileName: "letter_m.png", url: "https://www.flaticon.com/free-icon/letter-m_3097067?term=m&page=1&position=5&origin=search&related_id=3097067" },
+
   // =========================
+  { fileName: ".png", url: "" },
   /*
   https://raw.githubusercontent.com/0-AutomationCode/tab-icons/main/.png
   */

@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const directory = "./";
+const directory = "../";
 // =========================
 // const arrRemovedFiles = [".gitignore"];
 

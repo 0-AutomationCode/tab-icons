@@ -1,0 +1,9 @@
+.notion-header-block,
+.notion-sub_header-block,
+.notion-sub_sub_header-block {
+  margin: 0px !important;
+}
+
+.notion-divider-block > div > div {
+  border-bottom: 2px solid rgba(255, 255, 255, 1) !important;
+}

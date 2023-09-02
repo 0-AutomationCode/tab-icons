@@ -1,0 +1,336 @@
+<html>
+<style>
+  .header {
+    font-size: 40px;
+    color: #4CAF50;
+  }
+
+  .input {
+    font-size: 50px;
+    width: 150px;
+    height: 75px;
+    text-align: center;
+    font-weight: bold;
+    color: red;
+  }
+
+  .text {
+    font-size: 50px;
+    color: #000000;
+    margin: 0px;
+  }
+
+  .result {
+    font-size: 70px;
+    color: blue;
+    font-weight: bold;
+    margin: 0px;
+  }
+</style>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="icon" type="image/png"
+    href="https://compass1.org/wp-content/uploads/2015/06/Calculator_clipped_rev_1-285x300.png">
+  <title>Convert Salary</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- <div class="row align-items-center justify-content-center">
+    <p class="header"><b>Convert from <b>$</b> per year to <b>JD</b> per month</b></p>
+  </div> -->
+
+  <!-- <div class="row align-items-center justify-content-center">
+    <input id="input4" class="input" placeholder="$$$" value="30" />
+    <h1 class="text">&nbsp;<b>$ </b>Per Task&nbsp;</h1>
+    <h1 id="result4" class="result">6</h1>
+    <h1 class="text">&nbsp;<b>Hours </b>I Have</h1>
+  </div>
+
+  <div class="row align-items-center justify-content-center">
+    <input id="input2" class="input" placeholder="$$" value="50" />
+    <h1 class="text">&nbsp;<b>$ </b>Per Day&nbsp;</h1>
+    <h1 id="result2" class="result">1050</h1>
+    <h1 class="text">&nbsp;<b>JD </b>Per Month</h1>
+  </div> -->
+
+
+  <!-- <div class="row align-items-center justify-content-center">
+    <input id="input-kh" class="input" placeholder="+96" value="" style="font-size: 10px;" />
+    <h1 class="text">&nbsp;to&nbsp;</h1>
+    <h1 id="result-kh" class="result" style="font-size: 40px;">HERE</h1>
+  </div> -->
+
+  <!-- 0- from Whatsapp number to number without 0 -->
+  <div class="row align-items-center justify-content-center">
+    <h1 class="text">From &nbsp;</h1>
+
+    <input id="input-wfwf" class="input" placeholder="Past Whats number +9XX" value="" style="font-size: 10px;" />
+    <h1 class="text">&nbsp;to&nbsp;</h1>
+    <h1 id="result-wfwf" class="result" style="font-size: 40px;">HERE</h1>
+  </div>
+
+
+
+  <div class="row align-items-center justify-content-center">
+    <input id="input-11" class="input" placeholder="JD" value="100" />
+    <h1 class="text">&nbsp;<b>JD </b>to&nbsp;</h1>
+    <h1 id="result-11" class="result">526.32</h1>
+    <h1 class="text">&nbsp;<b>SAR</b></h1>
+  </div>
+
+  <div class="row align-items-center justify-content-center">
+    <input id="input-12" class="input" placeholder="SAR" value="100" />
+    <h1 class="text">&nbsp;<b>SAR </b>to&nbsp;</h1>
+    <h1 id="result-12" class="result">18.9</h1>
+    <h1 class="text">&nbsp;<b>JD</b></h1>
+  </div>
+
+  <div class="row align-items-center justify-content-center">
+    <input id="input1" class="input" placeholder="$" value="100" />
+    <h1 class="text">&nbsp;<b>$ </b>to&nbsp;</h1>
+    <h1 id="result1" class="result">70</h1>
+    <h1 class="text">&nbsp;<b>JD</b></h1>
+  </div>
+
+  <div class="row align-items-center justify-content-center">
+    <input id="input3" class="input" placeholder="$$$" value="30" />
+    <h1 class="text">&nbsp;<b>$ </b>Per Year&nbsp;</h1>
+    <h1 id="result3" class="result">1750</h1>
+    <h1 class="text">&nbsp;<b>JD </b>Per Month</h1>
+  </div>
+
+  <div class="row align-items-center justify-content-center">
+    <input id="input5" class="input" placeholder="$$" value="10" />
+    <h1 class="text">&nbsp;<b>$ </b>Per Hour&nbsp;</h1>
+    <h1 id="result5" class="result">1207</h1>
+    <h1 class="text">&nbsp;<b>JD </b>Per Month</h1>
+  </div>
+
+  <!-- <div class="row align-items-center justify-content-center">
+    <input id="input7" class="input" placeholder="$" value="28" />
+    <h1 class="text">&nbsp;<b>€ </b>Euro&nbsp;</h1>
+    <h1 id="result7" class="result">30.74</h1>
+    <h1 class="text">&nbsp;<b>$ </b>&nbsp;</h1>
+    <h1 id="result77" class="result">21.82</h1>
+    <h1 class="text">&nbsp;<b>JD </b></h1>
+  </div>
+
+  <div class="row align-items-center justify-content-center">
+    <input id="input8" class="input" placeholder="$" value="25" />
+    <h1 class="text">&nbsp;<b>£ </b>Pound&nbsp;</h1>
+    <h1 id="result8" class="result">30.83</h1>
+    <h1 class="text">&nbsp;<b>$ </b>&nbsp;</h1>
+    <h1 id="result88" class="result">21.88</h1>
+    <h1 class="text">&nbsp;<b>JD </b> </h1>
+  </div> -->
+
+  <!-- <div class="row align-items-center justify-content-center">
+    <input id="input6" class="input" placeholder="$" value="1" />
+    <h1 class="text">&nbsp;<b>$ </b>Question Per Hour&nbsp;</h1>
+    <h1 id="result6" class="result">504</h1>
+    <h1 class="text">&nbsp;<b>JD </b>Per Month</h1>
+  </div> -->
+
+  <!-- <div class="row align-items-center justify-content-center">
+    <input id="input-9" class="input" placeholder="JD" value="35" />
+    <h1 class="text">&nbsp;<b>JD </b>Price 1g Gold,Should Have&nbsp;</h1>
+    <h1 id="result-9" class="result">2975</h1>
+    <h1 class="text">&nbsp;<b>JD </b>For 1 year</h1>
+  </div> -->
+
+  <div class="row align-items-center justify-content-center">
+    <input id="input-13" class="input" placehol111der="20" value="20" />
+    <h1 class="text">&nbsp;L <b>₹</b> Per Year&nbsp;</h1>
+    <h1 id="result-13" class="result">1550</h1>
+    <h1 class="text">&nbsp;<b>JD </b>Per Month</h1>
+  </div>
+
+  <div class="row align-items-center justify-content-center">
+    <h1 class="text">Have&nbsp;</h1>
+    <input id="input-10" class="input" placeholder="3" value="3" />
+    <h1 class="text">&nbsp;K<b> JD </b>For 1 Year, Should Pay&nbsp;</h1>
+    <h1 id="result-10" class="result">75</h1>
+    <h1 class="text">&nbsp;<b>JD </b>For Zakkah</h1>
+  </div>
+
+  <!-- <script src="AMJ.js"></script> -->
+  <script>
+    // -1- hide from Khawater to correct name 
+    $("#input-kh").on("input", function a() {
+      var inp = $("#input-kh").val()
+      var arr = inp.slice(0, -8).split(' ')
+      var result = `${arr.slice(0, 2).join(' ')} - ${arr.slice(-2).join(' ')} - ${arr.slice(3, -3).join(' ')}`
+      // console.log(arr)
+      console.log(result)
+      $("#result-kh").text(result)
+      $("#result-kh").text(result).select()
+
+      // copy past
+      var r = document.createRange();
+      r.selectNode(document.getElementById('result-kh'));
+      console.log(r)
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(r);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+      $("#input-kh").val('')
+    });
+
+    // 0- From Whatsapp number to number without 0
+    // +962 7 8029 1130 => 780291130
+    // +966 7 8029 1130 => 966780291130
+    $("#input-wfwf").on("input", function a() {
+      var ind = $("#input-wfwf")[0].value
+      var arr = ind.slice(1).split(' ')
+      var result = ''
+      console.log(arr)
+      if (arr[0] === '962') {
+        result = arr.slice(1).join('')
+      } else {
+        result = arr.join('')
+      }
+
+      $("#result-wfwf").text(function (text) {
+        return result;
+      });
+      console.log(result)
+      $("#result-kh").text(result)
+      $("#result-kh").text(result).select()
+
+      // copy past
+      var r = document.createRange();
+      r.selectNode(document.getElementById('result-wfwf'));
+      console.log(r)
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(r);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+      $("#input-wfwf").val('')
+    });
+
+
+
+    // 1- from $ to JD
+    $("#input1").on("input", function a() {
+      var dollar = $("#input1")[0].value
+      var jd = (dollar / 1.41).toFixed(2)
+      $("#result1").text(function (text) {
+        return jd;
+      });
+    });
+    // 3- from $ per year to JD per month
+    $("#input3").on("input", function a() {
+      var dollar = $("#input3")[0].value
+      var jd = ((dollar / 12) / 1.41 * 1000)
+      $("#result3").text(function (text) {
+        return Math.trunc(jd);
+      });
+    });
+    // 5- from $ per hour to JD per month
+    $("#input5").on("input", function a() {
+      var dollar = $("#input5")[0].value
+      var jd = dollar / 1.41 * 176
+      $("#result5").text(function (text) {
+        return Math.trunc(jd);
+      });
+    });
+    // 6- from question per hour to JD per month
+    // 8 question per hour * 30
+    $("#input6").on("input", function a() {
+      var dollar = $("#input6")[0].value
+      var jd = dollar / 1.41 * 176 * 3
+      $("#result6").text(function (text) {
+        return Math.trunc(jd);
+      });
+    });
+    // 7- from € Euro to Dollar 
+    $("#input7").on("input", function a() {
+      var euro = $("#input7")[0].value
+      var dollar = euro * 1.1
+      var jd = dollar / 1.41
+      $("#result7").text(function (text) {
+        return Math.trunc(dollar);
+      });
+      $("#result77").text(function (text) {
+        return Math.trunc(jd);
+      });
+    });
+    // 8- from £ Pound sterling to Dollar 
+    $("#input8").on("input", function a() {
+      var pound = $("#input8")[0].value
+      var dollar = pound * 1.23
+      var jd = dollar / 1.41
+      $("#result8").text(function (text) {
+        return Math.trunc(dollar);
+      });
+      $("#result88").text(function (text) {
+        return Math.trunc(jd);
+      });
+    });
+    // 9- from 1g Gold to How much jd you have 
+    $("#input-9").on("input", function a() {
+      var OneGramGoldPrice = $("#input-9")[0].value
+      var shouldHave = OneGramGoldPrice * 85
+      $("#result-9").text(function (text) {
+        return Math.trunc(shouldHave);
+      });
+    });
+    // 10- How much JD zakkah should pay if have jd amount for 1 year
+    $("#input-10").on("input", function a() {
+      var howMuchHaveFor1Year = $("#input-10")[0].value
+      var howMuchShouldPayForZakkah = (howMuchHaveFor1Year / 40) * 1000
+      $("#result-10").text(function (text) {
+        return Math.trunc(howMuchShouldPayForZakkah);
+      });
+    });
+    // 11- from JD to SAR
+    $("#input-11").on("input", function a() {
+      var jd = $("#input-11")[0].value
+      var sar = (jd / 0.19).toFixed(2)
+      $("#result-11").text(function (text) {
+        return sar;
+      });
+    });
+    // 12- from SAR to JD
+    $("#input-12").on("input", function a() {
+      var sar = $("#input-12")[0].value
+      var jd = (sar * 0.19).toFixed(2)
+      $("#result-12").text(function (text) {
+        return jd;
+      });
+    });
+
+    // 12- from IND per year to JD per month
+    $("#input-13").on("input", function a() {
+      var ind = $("#input-13")[0].value
+      var jd = (ind * 930) / 12
+      $("#result-13").text(function (text) {
+        return jd;
+      });
+    });
+
+    /*
+    //from 1000 $ per task to how much hour I have
+    $("#input4").on("input", function a() {
+      var dollar = $("#input4")[0].value
+      var hours = (dollar / 5)
+      $("#result4").text(function (text) {
+        return Math.trunc(hours);
+      });
+    });
+    //from $ per day to JD per month
+    $("#input2").on("input", function a() {
+      var dollar = $("#input2")[0].value
+      var jd = dollar / 1.41 * 30
+      $("#result2").text(function (text) {
+        return Math.trunc(jd);
+      });
+    });
+    */
+  </script>
+</body>
+
+</html>

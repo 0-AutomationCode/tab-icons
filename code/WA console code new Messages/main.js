@@ -2,15 +2,14 @@ const titleText = "9-13 5 PM | ";
 const title = $(`title`);
 title.text(titleText + title.text());
 
+console.log(titleText);
 // ! ===================
 
-console.log(titleText);
-
-const mainDiv = $(`#pane-side`);
+const mainDiv = $("#pane-side");
 
 const entireChat = mainDiv.children().children().children().children();
 
-let allNewMessagesNumbers = ``;
+let allNewMessagesNumbers = "";
 
 const allNewMessages = entireChat.map((i, oneChat) => {
   // console.log(oneChat);
@@ -31,10 +30,7 @@ const allNewMessages = entireChat.map((i, oneChat) => {
     // console.log(phoneNumberArray);
     phoneNumberText = phoneNumberArray.join("").split("\n").join("").slice(1);
   }
-  allNewMessagesNumbers =
-    allNewMessagesNumbers +
-    `
-  ${phoneNumberText}`;
+  allNewMessagesNumbers = allNewMessagesNumbers + "\n" + phoneNumberText;
 
   phoneNumberText = phoneNumberText;
   const newMessage = {

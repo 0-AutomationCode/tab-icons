@@ -1,10 +1,19 @@
-const titleText = "2023-9-10 9 AM";
+const titleText = "2023-9-13 5 PM";
 const title = $(`title`);
 title.text(titleText);
 
 // ! ===================
 
-console.log("2023-9-10");
+console.log(titleText);
 
+const entireChat = $(`#pane-side`);
 
+const AllNewMessages = entireChat.map((chat) => {
+  const newMessage = {
+    phoneNumber: ``,
+    time: ``,
+  };
+  return newMessage;
+});
 
+console.log("ALLNEWMESSAGES: ", AllNewMessages);

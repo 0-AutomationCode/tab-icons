@@ -95,9 +95,6 @@
   <link rel="icon" type="image/png"
     href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png">
 
-
-
-
   <title>Convert WhatsApp Number</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -174,6 +171,15 @@
         $("#input").val('')
       }, 2000);
     });
+
+
+
+    // get the name of the file C10-Numbers
+    const currentDirectory = window.location.pathname.split("/");
+    const fileTitle = currentDirectory[currentDirectory.length - 1].split('-')[0]
+    const title = $(`title`)
+    title.text(fileTitle + '- ' + title.text)
+
   </script>
 
 </body>

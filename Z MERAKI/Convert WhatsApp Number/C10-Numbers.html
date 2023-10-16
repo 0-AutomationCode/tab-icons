@@ -132,9 +132,16 @@
     $("#input").on("input", function a() {
       var textEntered = $("#input")[0].value
       console.log(textEntered)
+
       // there is different between 
       // normal space ' ' and the whatsApp space ' '
-      var arr = textEntered.slice(1).split(' ')
+      const normalSpace = ' '
+      // 962 7 8688 0074
+      const weirdSpace = ''
+
+      let space = normalSpace
+
+      var arr = textEntered.slice(1).split(space)
       var result = ''
       console.log(arr)
       if (arr[0] === '962') {

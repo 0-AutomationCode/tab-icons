@@ -93,35 +93,38 @@ const getAllRepos = (
   // console.log("URL:", endpoint);
 
   const res = UrlFetchApp.fetch(endpoint, options);
-  console.log("RES:", res);
+  // console.log("RES:", res);
   console.log("STATUS:", res.getResponseCode());
   // console.log("RES:", res.getContentText());
   // Logger.log(res.getContentText());
+  const resultObj = { a: 1 };
 
-  const data2=JSON.stringify(res.getContentText())
-  const repos2 = {};
-  data2.forEach((e, i) => {
-    const { name, private } = e;
-    repos2[e.name] = private ? "YES" : "NO";
-    console.log(e.name);
-  });
+  if (res.getResponseCode() == 200) {
+    const data2 = JSON.parse(res.getContentText());
+    resultObj.b = 2;
+    // console.log(data2);
 
-  console.log("DATA2: ", repos2);
+    data2.forEach((e, i) => {
+      const { name, private } = e;
+      resultObj[e.name] = private ? "YES" : "NO";
+      // console.log(e.name);
+    });
 
-  // let result = res.getResponseCode() == 204 ? true : false;
-  // console.log("RESULT:", result);
-
-  return "result";
+    console.log("result TRUE: ", resultObj);
+    return JSON.stringify(resultObj);
+  }
+  // return resultObj;
+  console.log("result FALSE: ", resultObj);
+  return "Not Working ???";
 };
 
 // TODO ================== TEST Section
 
-const student_token =
-  "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";
+const student_token = "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";
 
 let c9StuORG = "C9-AyaAlomarii";
 
 c9StuORG = "C9-Alaaalnseirat";
 c9StuORG = "C9-AyaAlomarii";
 
-getAllRepos(c9StuORG, student_token);
+// getAllRepos(c9StuORG, student_token);

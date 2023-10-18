@@ -105,6 +105,6 @@ testStudents = "SondosAlrifae";
 testStudents = "SondosAlrifae";
 testStudents = "MohammadJouza";
 
-isAMember(testStudents, token_c9, c9ORG);
+// isAMember(testStudents, token_c9, c9ORG);
 
 // ! - start section 2

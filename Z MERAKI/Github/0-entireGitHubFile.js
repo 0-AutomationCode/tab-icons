@@ -74,8 +74,8 @@ testStudents = "MohammadJouza";
  */
 
 const getAllRepos = (
-  studentGitHubOrganization,
-  studentToken,
+  studentGitHubOrganization = "C9-AyaAlomarii",
+  studentToken = "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",
   REQUEST_TYPE = "get"
 ) => {
   // console.log("TOKEN:", token);
@@ -120,7 +120,7 @@ const getAllRepos = (
 
 // TODO ================== TEST Section
 
-const student_token = "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";
+const student_token = "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";
 
 let c9StuORG = "C9-AyaAlomarii";
 

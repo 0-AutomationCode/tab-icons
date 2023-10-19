@@ -8,31 +8,28 @@ app.use(express.json());
 
 //  TODO ============================
 
-const createStudentsObj = (names, usernames) => {
-  const result = {};
+const createStudents = (type, names, usernames) => {
+  let result 
 
-  names.forEach((student, i) => {
-    result[student] = {
-      displayName: student,
-      githubORG: `C9-` + usernames[i],
-      githubUsername: usernames[i],
-    };
-  });
-
-  return result;
-};
-
-const createStudentsArray = (names, usernames) => {
-  const result = [];
-
-  names.forEach((student, i) => {
-    result.push({
-      displayName: student,
-      githubORG: `C9-` + usernames[i],
-      githubUsername: usernames[i],
+  if (type == "obj") {
+    result = {};
+    names.forEach((student, i) => {
+      result[student] = {
+        displayName: student,
+        githubORG: `C9-` + usernames[i],
+        githubUsername: usernames[i],
+      };
     });
-  });
-
+  } else {
+    result = [];
+    names.forEach((student, i) => {
+      result.push({
+        displayName: student,
+        githubORG: `C9-` + usernames[i],
+        githubUsername: usernames[i],
+      });
+    });
+  }
   return result;
 };
 
@@ -80,7 +77,7 @@ const githubUsernames = [
   "usfaql",
 ];
 
-const allStudents = createStudentsArray(studentsDisplayNames, githubUsernames);
+const allStudents = createStudents('obj',studentsDisplayNames, githubUsernames);
 
 // console.log(allStudents);
 // ! ============================

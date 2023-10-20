@@ -6,8 +6,8 @@ const moment = require("moment");
 const app = express();
 app.use(express.json());
 
-const allStudents = require("./data/23-10-19 Students Object").data;
-const repos = require("./data/logic/dataTest").data;
+const allStudents = require("./data/stuObj").data;
+const repos = require("./data/2023_10-19").data;
 /* ============================ */
 const GITHUB_API = "https://api.github.com";
 const OLD_TOKEN = "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";
@@ -57,6 +57,10 @@ const getAllRepoForAllStudents = (obj) => {
 // console.log(allStudents);
 
 // TODO ============================
+app.get("/database", (req, res) => {
+  // console.log("GET /");
+  res.json(entireDatabase);
+});
 
 app.get("/getAllRepos", (req, res) => {
   // console.log(req);
@@ -65,14 +69,9 @@ app.get("/getAllRepos", (req, res) => {
   res.json(allStudents);
 });
 
-// !- important ============================
-
-let lastFileCreated;
-
 app.get("/createDataFile", (req, res) => {
-  lastFileCreated = getTodayDate();
   fs.writeFile(
-    `./data/${lastFileCreated}.js`,
+    `./data/${getTodayDate()}.js`,
     `
   // const repos=${allStudents}
   const repos=${JSON.stringify(allStudents)}
@@ -82,17 +81,9 @@ app.get("/createDataFile", (req, res) => {
       if (err) throw err;
       entireDatabase = allStudents;
       console.log("Saved!");
-      res.json(`CREATED DATA FILE WITH THE TITLE: ${lastFileCreated}`);
+      res.json(entireDatabase);
     }
   );
-});
-
-app.get("/database", (req, res) => {
-  lastFileCreated = getTodayDate();
-  const entireData = require(`./data/${lastFileCreated}.js`).data;
-
-  console.log("GET /");
-  res.json(entireData);
 });
 
 let entireDatabase;
@@ -110,8 +101,7 @@ const getTodayDate = () => {
   console.log(todayDate); // "2023-10-19"
   */
 
-  // let todayDate = moment().format("YYYY-MM-DD hh-mm-ss A");
-  let todayDate = moment().format("YYYY-MM-DD");
+  let todayDate = moment().format("YYYY-MM-DD hh|mm|ss A");
 
   console.log(todayDate);
   return todayDate;

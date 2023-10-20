@@ -1,3 +1,4 @@
+
 console.log("DATA: ", data);
 
 console.log("DATA2: ", data2);
@@ -101,3 +102,5 @@ data2.forEach((e, i) => {
 });
 
 console.log("string: ", str);
+
+console.clear();

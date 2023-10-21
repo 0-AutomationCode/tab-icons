@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title></title>
+  </head>
+
+  <body>
+    <img src="https://svgshare.com/i/ihL.svg" style="width: 300px" />
+    <h1 id="title" style="text-align: center; margin-top: 50px"></h1>
+
+    <script>
+      const currentDirectory = window.location.pathname.split("/");
+      const pageTitle = currentDirectory[currentDirectory.length - 2];
+      document.title = pageTitle;
+      const arrowTitle = "===> " + "Practice: " + pageTitle + " <===";
+      document.querySelector("#title").innerText = arrowTitle;
+      console.log(arrowTitle);
+    </script>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+- Create a new directory for the day's lecture
+- Find the lecture name in the student sheet (S1-Homeworks) 
+- Take a copy of (index.html, main.js) from the starter-code folder
+- Paste the files into the new folder that you have created
+- Start work on the exercise

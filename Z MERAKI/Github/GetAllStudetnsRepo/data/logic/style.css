@@ -18,6 +18,14 @@ td {
 Addition Style
 */
 
+th.main {
+  /* background-color: gray; */
+}
+th.privateStatus {
+  background-color: gray;
+}
+
+
 td.exist {
   background-color: green;
 }
@@ -36,12 +44,12 @@ td.public {
   background-color: yellow;
 }
 
-td.good{
+td.good {
   background-color: green;
-
 }
 
 td.multipleLine {
   display: flex;
   flex-direction: column;
 }
+

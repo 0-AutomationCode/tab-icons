@@ -1,8 +1,14 @@
 // console.log("DATA: ", data);
 
+const cohortNumber = "C9";
 const GITHUB_URL = "https://www.github.com";
 
-const cohortNumber = "C9";
+const DISPLAY_NAME_TITLE = "Display_Name";
+const LEFT_REPOS_TITLE = "LEFT \n REPOS";
+const PRIVATE_STATUS_TITLE = "PRIVATE \n STATUS";
+
+// ============================
+
 const stage1HW = [
   "W01D01_Intro_To_JS",
   "W01D02_Functions",
@@ -22,7 +28,7 @@ const stage1HW = [
   "W06D01_jQuery",
 ];
 
-const columnTitles = ["Display_Name", "LEFT \n REPOS", ...stage1HW];
+const columnTitles = [DISPLAY_NAME_TITLE, LEFT_REPOS_TITLE, ...stage1HW];
 
 const entireTable = $("#table-container");
 
@@ -39,12 +45,17 @@ const initTable = () => {
 
   // Create table header with column titles
   $.each(columnTitles, function (index, colTitle) {
-    if (colTitle == "Display_Name") {
-      tr.append($("<th>").text(colTitle));
-      tr.append($("<th>").text("ORG"));
+    if (colTitle == DISPLAY_NAME_TITLE) {
+      tr.append($(`<th class="main">${colTitle}</th>`));
+      tr.append($(`<th class="privateStatus">${"C#-ORG"}</th>`));
+    } else if (colTitle == LEFT_REPOS_TITLE) {
+      tr.append(
+        $(`<th class="main">${colTitle} - ${PRIVATE_STATUS_TITLE}</th>`)
+      );
+      tr.append($(`<th class="privateStatus">Total ${colTitle}</th>`));
     } else {
-      tr.append($("<th>").text(colTitle));
-      tr.append($("<th>").text("PRIVATE \n STATUS"));
+      tr.append($(`<th class="main">${colTitle}</th>`));
+      tr.append($(`<th class="privateStatus">${PRIVATE_STATUS_TITLE}</th>`));
     }
   });
 
@@ -104,7 +115,7 @@ fillTableWithDataForOneStudents = (studentObj) => {
   // Check the repo status
   $.each(columnTitles, function (index, colTitle) {
     // console.log(colTitle);
-    if (colTitle == "Display_Name") {
+    if (colTitle == DISPLAY_NAME_TITLE) {
       // console.log("DDDDDD", displayName);
 
       newtr.append(`<td >${displayName}</td>`);
@@ -114,36 +125,31 @@ fillTableWithDataForOneStudents = (studentObj) => {
       );
 
       // console.log(newtr[0]);
-    } else if (colTitle == "LEFT \n REPOS") {
+    } else if (colTitle == LEFT_REPOS_TITLE) {
       let finalResult = [];
+      // let finalResultStatus = [];
+
       for (const repoTitle in leftRepos) {
         // finalResult.push(`<span>${repoTitle}-${leftRepos[repoTitle]}</span>`)
 
         finalResult.push(
-          `<a href="${GITHUB_URL}/${githubORG}/${repoTitle}/settings" target="_blank">${repoTitle}</a>`
+          `<a href="${GITHUB_URL}/${githubORG}/${repoTitle}/settings" target="_blank">${repoTitle} - ${leftRepos[repoTitle]}</a>`
         );
+        // finalResultStatus.push(`<span>${leftRepos[repoTitle]}</span>`)
       }
 
       const leftRepoResult = finalResult.join("");
+      // const leftRepoResultStatus = finalResultStatus.join("");
+
       newtr.append(
-        `<td class="${leftRepoResult ? "multipleLine" : "good"}">${
-          leftRepoResult || "ALL GOOD"
+        `<td class="${leftRepoResult ? "multipleLine" : "notApplicable"}">${
+          leftRepoResult || "N/A"
         }</td>`
       );
-
-      // console.log("HERE");
-      // console.log(leftRepos);
-
-      // const leftReposTitle = Object.keys(leftRepos).join("\n");
-      // const leftReposStatus = Object.values(leftRepos).join("\n");
-
-      // const leftReposTitle = Object.keys(leftRepos).map((e, i) => {
-      //   return `<span>${e}</span>`;
-      // });
-      // const leftReposStatus = Object.values(leftRepos).join("\n");
-
-      // newtr.append(`<td class="multipleLine">${leftReposTitle.join("")}</td>`);
-      // newtr.append(`<td class="multipleLine">${leftReposStatus}</td>`);
+      newtr.append(
+        `<td>${finalResult.length}
+        </td>`
+      );
     } else {
       let isRepoExist = "404";
       let isRepoPrivate = "N/A";
@@ -187,9 +193,9 @@ const fillTableWithData = (studentsObj) => {
 // `data` for tested data
 fillTableWithData(repos);
 
-const todayDate = "2023-10-23 12:48 AM";
+const todayDate = "2023/10/23 1:08 AM";
 $(`#title`).text(
-  `${cohortNumber}- ${$("#title").text()} | Date => ${todayDate}`
+  `Last Update: ${todayDate}`
 );
 $(`title`).text(`${todayDate}`);
 

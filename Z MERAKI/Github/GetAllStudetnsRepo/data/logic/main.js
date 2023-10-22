@@ -108,7 +108,10 @@ fillTableWithDataForOneStudents = (studentObj) => {
       // console.log("DDDDDD", displayName);
 
       newtr.append(`<td >${displayName}</td>`);
-      newtr.append(`<td>${githubORG}</td>`);
+
+      newtr.append(
+        `<td>${`<a href="${GITHUB_URL}/${githubORG}" target="_blank">${githubORG}</a>`}</td>`
+      );
 
       // console.log(newtr[0]);
     } else if (colTitle == "LEFT \n REPOS") {
@@ -120,7 +123,13 @@ fillTableWithDataForOneStudents = (studentObj) => {
           `<a href="${GITHUB_URL}/${githubORG}/${repoTitle}/settings" target="_blank">${repoTitle}</a>`
         );
       }
-      newtr.append(`<td class="multipleLine">${finalResult.join("")}</td>`);
+
+      const leftRepoResult = finalResult.join("");
+      newtr.append(
+        `<td class="${leftRepoResult ? "multipleLine" : "good"}">${
+          leftRepoResult || "ALL GOOD"
+        }</td>`
+      );
 
       // console.log("HERE");
       // console.log(leftRepos);
@@ -178,8 +187,10 @@ const fillTableWithData = (studentsObj) => {
 // `data` for tested data
 fillTableWithData(repos);
 
-const todayDate = "2023-10-22";
-$(`#title`).text(`cohortNumber-${$("#title").text()} => ${todayDate}`);
+const todayDate = "2023-10-23 12:48 AM";
+$(`#title`).text(
+  `${cohortNumber}- ${$("#title").text()} | Date => ${todayDate}`
+);
 $(`title`).text(`${todayDate}`);
 
 // const CSSapplied

@@ -36,6 +36,11 @@ td.public {
   background-color: yellow;
 }
 
+td.good{
+  background-color: green;
+
+}
+
 td.multipleLine {
   display: flex;
   flex-direction: column;

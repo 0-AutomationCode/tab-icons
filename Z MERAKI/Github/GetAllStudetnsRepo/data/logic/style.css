@@ -3,10 +3,40 @@ table {
   width: 80%;
   margin: 20px auto;
 }
-table, th, td {
+table,
+th,
+td {
   border: 1px solid #ccc;
 }
-th, td {
+th,
+td {
   padding: 8px;
   text-align: left;
+}
+
+/* 
+Addition Style
+*/
+
+td.exist {
+  background-color: green;
+}
+
+td.notApplicable {
+  background-color: gray;
+}
+
+td.notExist {
+  background-color: red;
+}
+td.private {
+  background-color: green;
+}
+td.public {
+  background-color: yellow;
+}
+
+td.multipleLine {
+  display: flex;
+  flex-direction: column;
 }

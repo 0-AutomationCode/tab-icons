@@ -10,7 +10,7 @@ const allStudents = require("./data/23-10-19 Students Object").data;
 const repos = require("./data/logic/dataTest").data;
 /* ============================ */
 const GITHUB_API = "https://api.github.com";
-const OLD_TOKEN = "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";
+const OLD_TOKEN = "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";
 
 // ! =========== GET ALL REPOS =================
 const getAllRepoForOneStudent = async (student, token = OLD_TOKEN) => {
@@ -82,12 +82,15 @@ app.get("/createDataFile", (req, res) => {
       if (err) throw err;
       entireDatabase = allStudents;
       console.log("Saved!");
-      res.json(`CREATED DATA FILE WITH THE TITLE: ${lastFileCreated}`);
+      res.json({
+        message: `CREATED DATA FILE WITH THE TITLE: ${lastFileCreated}`,
+        data: allStudents,
+      });
     }
   );
 });
 
-app.get("/database", (req, res) => {
+app.get("/showDatabase", (req, res) => {
   lastFileCreated = getTodayDate();
   const entireData = require(`./data/${lastFileCreated}.js`).data;
 

@@ -1,5 +1,8 @@
 // console.log("DATA: ", data);
 
+const GITHUB_URL = "https://www.github.com";
+
+const cohortNumber = "C9";
 const stage1HW = [
   "W01D01_Intro_To_JS",
   "W01D02_Functions",
@@ -7,8 +10,8 @@ const stage1HW = [
   "W02D01_Scopes",
   "W02D02_Arrays",
   "W02D03_Objects",
-  "W03D01_Iteration_Part_1",
-  "W03D02_Iteration_Part_2",
+  "W03D01_Iteration_P1",
+  "W03D02_Iteration_P2",
   "W03D03_Recursion",
   "W04D01_CB_HOF",
   "W04D02_OOP",
@@ -87,23 +90,51 @@ fillTableWithDataForOneStudents = (studentObj) => {
   const newtr = $("<tr>");
 
   // console.log(newtr[0]);
+  let newtrLeft = $("<tr>");
+  let newtrStatus = $("<tr>");
 
-  const leftRepos = repos;
-// TODO get LEFT Repo
+  const leftRepos = {};
+  // TODO get LEFT Repo
   for (const repoTitle in repos) {
+    if (!columnTitles.includes(repoTitle)) {
+      leftRepos[repoTitle] = repos[repoTitle];
+    }
   }
 
-// Check the repo status
-
+  // Check the repo status
   $.each(columnTitles, function (index, colTitle) {
     // console.log(colTitle);
     if (colTitle == "Display_Name") {
       // console.log("DDDDDD", displayName);
 
-      newtr.append($("<td>").text(displayName));
-      newtr.append($("<td>").text(githubORG));
+      newtr.append(`<td >${displayName}</td>`);
+      newtr.append(`<td>${githubORG}</td>`);
 
       // console.log(newtr[0]);
+    } else if (colTitle == "LEFT \n REPOS") {
+      let finalResult = [];
+      for (const repoTitle in leftRepos) {
+        // finalResult.push(`<span>${repoTitle}-${leftRepos[repoTitle]}</span>`)
+
+        finalResult.push(
+          `<a href="${GITHUB_URL}/${githubORG}/${repoTitle}/settings" target="_blank">${repoTitle}</a>`
+        );
+      }
+      newtr.append(`<td class="multipleLine">${finalResult.join("")}</td>`);
+
+      // console.log("HERE");
+      // console.log(leftRepos);
+
+      // const leftReposTitle = Object.keys(leftRepos).join("\n");
+      // const leftReposStatus = Object.values(leftRepos).join("\n");
+
+      // const leftReposTitle = Object.keys(leftRepos).map((e, i) => {
+      //   return `<span>${e}</span>`;
+      // });
+      // const leftReposStatus = Object.values(leftRepos).join("\n");
+
+      // newtr.append(`<td class="multipleLine">${leftReposTitle.join("")}</td>`);
+      // newtr.append(`<td class="multipleLine">${leftReposStatus}</td>`);
     } else {
       let isRepoExist = "404";
       let isRepoPrivate = "N/A";
@@ -111,12 +142,26 @@ fillTableWithDataForOneStudents = (studentObj) => {
       if (repos[colTitle]) {
         isRepoExist = "EXIST";
         isRepoPrivate = repos[colTitle] == "YES" ? "YES" : "NO";
+        delete leftRepos[colTitle];
       }
-
-      newtr.append($("<td>").text(isRepoExist));
-      newtr.append($("<td>").text(isRepoPrivate));
+      newtr.append(
+        `<td class='${
+          isRepoExist == "EXIST" ? "exist" : "notExist"
+        }'>${isRepoExist}</td>`
+      );
+      newtr.append(
+        `<td class='${
+          (isRepoPrivate == "YES" && "private") ||
+          (isRepoPrivate == "NO" && "public") ||
+          (isRepoPrivate == "N/A" && "notApplicable")
+        }'>${isRepoPrivate}</td>`
+      );
     }
   });
+
+  newtrLeft;
+  newtrStatus;
+  console.log(leftRepos);
 
   tBody.append(newtr);
 };
@@ -128,4 +173,13 @@ const fillTableWithData = (studentsObj) => {
     fillTableWithDataForOneStudents(studentsObj[stuDisplayName]);
   }
 };
-fillTableWithData(data);
+
+// `repos` for real data
+// `data` for tested data
+fillTableWithData(repos);
+
+const todayDate = "2023-10-22";
+$(`#title`).text(`cohortNumber-${$("#title").text()} => ${todayDate}`);
+$(`title`).text(`${todayDate}`);
+
+// const CSSapplied

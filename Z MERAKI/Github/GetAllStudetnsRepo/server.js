@@ -6,11 +6,11 @@ const moment = require("moment");
 const app = express();
 app.use(express.json());
 
-const allStudents = require("./data/23-10-19 Students Object").data;
+const allStudentsObj = require("./data/23-10-19 Students Object").data;
 const repos = require("./data/logic/dataTest").data;
 /* ============================ */
 const GITHUB_API = "https://api.github.com";
-const OLD_TOKEN = "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";
+const OLD_TOKEN = "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";
 
 // ! =========== GET ALL REPOS =================
 const getAllRepoForOneStudent = async (student, token = OLD_TOKEN) => {
@@ -39,8 +39,11 @@ const getAllRepoForOneStudent = async (student, token = OLD_TOKEN) => {
       return "DONEEEEEE";
     })
     .catch((err) => {
-      // console.log("ERR: ", err);
       console.log("ERR: ", student.displayName);
+      console.log("ERR: ", err.code);
+      console.log("ERR: ", err.response.status , 
+      err.response.data);
+      // console.log("ERR: ", err);
     });
 };
 
@@ -59,11 +62,13 @@ const getAllRepoForAllStudents = (obj) => {
 // TODO ============================
 
 app.get("/getAllRepos", (req, res) => {
-  // console.log(req);
-  const newToken = req.query.token;
-  getAllRepoForAllStudents(allStudents, newToken);
-  res.json(allStudents);
+  // const newToken = req.query.token;
+  // console.log(req.query.token);
+  getAllRepoForAllStudents(allStudentsObj);
+  res.json(allStudentsObj);
 });
+
+// getAllRepoForOneStudent(allStudentsObj.A01_Shishani);
 
 // !- important ============================
 
@@ -74,17 +79,17 @@ app.get("/createDataFile", (req, res) => {
   fs.writeFile(
     `./data/${lastFileCreated}.js`,
     `
-  // const repos=${allStudents}
-  const repos=${JSON.stringify(allStudents)}
+  // const repos=${allStudentsObj}
+  const repos=${JSON.stringify(allStudentsObj)}
   module.exports = { data: repos }; 
   `,
     function (err) {
       if (err) throw err;
-      entireDatabase = allStudents;
+      entireDatabase = allStudentsObj;
       console.log("Saved!");
       res.json({
         message: `CREATED DATA FILE WITH THE TITLE: ${lastFileCreated}`,
-        data: allStudents,
+        data: allStudentsObj,
       });
     }
   );
@@ -121,6 +126,21 @@ const getTodayDate = () => {
 };
 
 // getTodayDate()
+
+// remove from `allStudents` quit students
+const quitStudents = [
+  "A05_Anas",
+  "B05_IbraheemS",
+  "B14_Sameer",
+  "B16_Tariq",
+  "G07_Maryam",
+  "G11_Mousa",
+];
+
+quitStudents.forEach((studentDisplayName, i) => {
+  delete allStudentsObj[studentDisplayName];
+});
+console.log(allStudentsObj);
 
 /* ============================ */
 

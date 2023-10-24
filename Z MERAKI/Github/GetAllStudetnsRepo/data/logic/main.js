@@ -303,6 +303,4 @@ const initTable = (columnTitles = defaultColumnTitles) => {
 
 initTable();
 
-const todayDate = "2023/10/23 2:30 AM";
-$(`#title`).text(`${cohortNumber}- Students Check | Last Update: ${todayDate}`);
-$(`title`).text(`${todayDate}`);
+

@@ -32,24 +32,24 @@
 ## Colors:
 NOTE: 255 = **FF** | 127 = **7F** | 0 = **00** 
 Website: https://htmlcolorcodes.com/
-| Color | RED | GREEN | BLUE |  
-| --- | --- | --- | --- |
-| Red | FF | 00 | 00 |
-| Green | 00 | FF | 00 |
-| Blue | 00 | 00 | FF |
-| --- | --- | --- | --- |
-| Yellow | FF | FF | 00 |
-| Aqua | 00 | FF | FF |
-| Pink | FF | 00 | FF |
-| --- | --- | --- | --- |
-| Orange | FF | 7F | 00 |
-| Blue-2 | 00 | 7F | FF |
-| Purple | 7F | 00 | FF |
-| --- | --- | --- | --- |
-| Green-2 | 00 | FF | 7F |
-| Rose | FF | 00 | 7F |
-| Green-3 | 7F | FF | 00 |
-| --- | --- | --- | --- |
+| Color | RED | GREEN | BLUE | Entire Hex | 
+| --- | --- | --- | --- | --- |
+| Red | FF | 00 | 00 | FF0000 |
+| Green | 00 | FF | 00 | 00FF00 |
+| Blue | 00 | 00 | FF | 0000FF |
+| --- | --- | --- | --- | --- |
+| Yellow | FF | FF | 00 | FFFF00 |
+| Aqua | 00 | FF | FF | 00FFFF |
+| Pink | FF | 00 | FF | FF00FF |
+| --- | --- | --- | --- | --- |
+| Orange | FF | 7F | 00 | FF7F00 |
+| Blue-2 | 00 | 7F | FF | 007FFF |
+| Purple | 7F | 00 | FF | 7F00FF |
+| --- | --- | --- | --- | --- |
+| Green-2 | 00 | FF | 7F | 00FF7F |
+| Rose | FF | 00 | 7F | FF007F |
+| Green-3 | 7F | FF | 00 | 7fFF00 |
+| --- | --- | --- | --- | --- |
 |  |  |
 
 ---

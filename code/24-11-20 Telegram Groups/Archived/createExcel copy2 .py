@@ -10,12 +10,13 @@ load_dotenv()
 api_id = os.getenv('API_ID')
 api_hash = os.getenv('API_HASH')
 phone = os.getenv('PHONE')
-fileName = 'telegram_groups-5'
+
+fileName = 'telegram_groups-4'
 
 client = TelegramClient('session_name', api_id, api_hash)
 
 async def main():
-    # List to store group titles, creation dates, and chat IDs
+    # List to store group titles and creation dates
     group_data = []  
 
     # Fetch dialogs (chats, groups, channels, etc.)
@@ -24,8 +25,7 @@ async def main():
             title = dialog.name
             # Extract group creation date (if available, fallback to None)
             created_date = getattr(dialog.entity, 'date', None)
-            chat_id = dialog.entity.id  # Get the chat ID
-            group_data.append({'Title': title, 'Created Date': created_date, 'Chat ID': chat_id})
+            group_data.append({'Title': title, 'Created Date': created_date})
 
     # Convert the list of groups to a DataFrame
     df = pd.DataFrame(group_data)
